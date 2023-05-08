@@ -9,7 +9,7 @@ services:
     env_file:
       - ./.env
   web:
-    image: nucluster/api_yamdb
+    image: nucluster/yamdb
     container_name: yamdb-web
     volumes:
       - yamdb_static_volume:/app/static/
