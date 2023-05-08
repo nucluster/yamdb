@@ -1,0 +1,38 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:15.2-alpine3.17
+    container_name: yamdb-db
+    volumes:
+      - yamdb_db_volume:/var/lib/postgresql/data/
+    env_file:
+      - ./.env
+  web:
+    image: nucluster/api_yamdb
+    container_name: yamdb-web
+    volumes:
+      - yamdb_static_volume:/app/static/
+    depends_on:
+      - db
+    env_file:
+      - ./.env
+
+  nginx:
+    image: nginx:1.24.0-alpine3.17-slim
+    container_name: yamdb-nginx
+    ports:
+      - "127.0.0.1:8081:80"
+    volumes:
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf
+      - yamdb_static_volume:/var/html/static/
+    depends_on:
+      - web
+
+volumes:
+  yamdb_db_volume:
+  yamdb_static_volume:
+
+networks:
+  default:
+    name: yamdb-network
