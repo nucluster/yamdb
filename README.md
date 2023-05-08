@@ -16,7 +16,7 @@ git clone git@github.com:nucluster/yamdb.git
 
 Измените свою текущую рабочую директорию:
 ```
-cd /api_yamdb/
+cd yamdb/
 ```
 
 Создайте и активируйте виртуальное окружение
@@ -37,14 +37,9 @@ pip install -U pip
 Установите зависимости из requirements.txt:
 
 ```
-pip install -r requirements.txt
+pip install -r api_yamdb/requirements.txt
 ```
 
-Создайте миграции:
-
-```
-python manage.py makemigrations
-```
 Примените миграции:
 
 ```
