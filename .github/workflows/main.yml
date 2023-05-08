@@ -1,4 +1,4 @@
-#name: YaMDB test-build-deploy workflow
+name: YaMDB test-build-deploy workflow
 #
 #on: push
 #

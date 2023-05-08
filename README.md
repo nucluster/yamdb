@@ -11,7 +11,7 @@
 
 Клонируйте репозиторий:
 ```
-git clone git@github.com:t1m4k/api_yamdb.git
+git clone git@github.com:nucluster/yamdb.git
 ```
 
 Измените свою текущую рабочую директорию:
