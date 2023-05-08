@@ -12,9 +12,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.getenv('SECRET_KEY', default='super-secret-key')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = int(os.getenv('DJANGO_DEBUG', default=0))
+DEBUG = int(os.getenv('DEBUG', default=1))
 
-ALLOWED_HOSTS = os.getenv("DJANGO_ALLOWED_HOSTS", default='localhost').split()
+ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", default='localhost 127.0.0.1').split()
 
 
 # Application definition
